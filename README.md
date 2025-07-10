@@ -46,10 +46,11 @@ src/
 ## 📦 Installation
 
 1. **Clone the repo**
-   ```bash
+```bash
    git clone https://github.com/sagnikbera/ZapNote.git
    cd ZapNote
-    ```
+```
+
 2. **Install dependencies**
 ```bash
 npm install
