@@ -10,23 +10,35 @@ const Bin = () => {
 
   return (
     <>
-        <Fragment>
-          <NavBar />
-          <main className="flex gap-3">
-            <SideBar />
-            <div className="flex-1">
-              {bin?.length > 0 && (
-                <div className="font-bold p-2">
-                  <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {bin.filter(note => note !== null).map(({id, title, text , isPinned}) => (
-                    <NoteCard key={id} id={id} title={title} text={text} isPinned={isPinned}/>
+      <Fragment>
+        <NavBar />
+        <main className="flex gap-3">
+          <SideBar />
+          <div className="flex-1">
+            {bin?.length > 0 ? (
+              <div className="font-bold p-2">
+                <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  {bin
+                    .filter((note) => note !== null)
+                    .map(({ id, title, text, isPinned }) => (
+                      <NoteCard
+                        key={id}
+                        id={id}
+                        title={title}
+                        text={text}
+                        isPinned={isPinned}
+                      />
                     ))}
-                  </div>
                 </div>
-              )}
-            </div>
-          </main>
-        </Fragment>
+              </div>
+            ) : (
+              <div className="text-center text-gray-500 dark:text-gray-400 mt-10 text-lg font-medium">
+                🗑️ Bin is empty
+              </div>
+            )}
+          </div>
+        </main>
+      </Fragment>
     </>
   );
 };

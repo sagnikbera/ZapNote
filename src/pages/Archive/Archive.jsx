@@ -6,8 +6,7 @@ import { useNotes } from "../../contexts/notes-context";
 import NoteCard from "../../components/NoteCard/NoteCard";
 
 function Archive() {
-
-  const {archive} = useNotes();
+  const { archive } = useNotes();
 
   return (
     <>
@@ -17,7 +16,7 @@ function Archive() {
           <main className="flex gap-3">
             <SideBar />
             <div className="flex-1">
-              {archive?.length > 0 && (
+              {archive?.length > 0 ? (
                 <div className="font-bold p-2">
                   <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {archive.map(({ id, title, text, isPinned }) => (
@@ -30,6 +29,10 @@ function Archive() {
                       />
                     ))}
                   </div>
+                </div>
+              ) : (
+                <div className="text-center text-gray-500 dark:text-gray-400 mt-10 text-lg font-medium">
+                  📦 Archive is empty
                 </div>
               )}
             </div>
