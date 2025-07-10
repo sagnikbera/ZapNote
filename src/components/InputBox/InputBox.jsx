@@ -21,6 +21,7 @@ const InputBox = () => {
 
   const pinnedNotes =
     notes?.length > 0 && notes.filter(({ isPinned }) => isPinned);
+
   const otherNotes =
     notes?.length > 0 && notes.filter(({ isPinned }) => !isPinned);
 
@@ -32,14 +33,14 @@ const InputBox = () => {
           <input
             type="text"
             placeholder="Enter title"
-            className="border border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:text-white rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm sm:text-base"
+            className="border font-bold border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:text-white rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm sm:text-base"
             value={title}
             onChange={onTitleChange}
           />
           <div className="flex flex-col border border-transparent relative">
             <textarea
               placeholder="Enter text"
-              className="w-full border border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:text-white rounded-md px-4 py-2 pr-12 h-24 resize-none focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm sm:text-base"
+              className="w-full font-semibold border border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:text-white rounded-md px-4 py-2 pr-12 h-24 resize-none focus:outline-none focus:ring-2 focus:ring-violet-500 text-sm sm:text-base"
               value={text}
               onChange={onTextChange}
             />
@@ -53,38 +54,36 @@ const InputBox = () => {
           </div>
         </div>
       </div>
-      {pinnedNotes?.length > 0 && (
+      {/* {pinnedNotes?.length > 0 && (
         <div>
-           <h3 className="font-bold p-2">Pin Notes</h3>
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {pinnedNotes.map(({ id, title, text, isPinned }) => (
-            <NoteCard
-              key={id}
-              id={id}
-              title={title}
-              text={text}
-              isPinned={isPinned}
-            />
-          ))}
+          <h3 className="font-bold p-2">Pin Notes</h3>
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {pinnedNotes.map(({ id, title, text, isPinned }) => (
+              <NoteCard
+                key={id}
+                id={id}
+                title={title}
+                text={text}
+                isPinned={isPinned}
+              />
+            ))}
+          </div>
         </div>
-        </div>
-      )}
+      )} */}
       {otherNotes?.length > 0 && (
         <div className="font-bold p-2">
-        {
-            pinnedNotes?.length>0 && <h3>Other Notes</h3>
-        }
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {otherNotes.map(({ id, title, text, isPinned }) => (
-            <NoteCard
-              key={id}
-              id={id}
-              title={title}
-              text={text}
-              isPinned={isPinned}
-            />
-          ))}
-        </div>
+          {/* {pinnedNotes?.length > 0 && <h3>Other Notes</h3>} */}
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {otherNotes.map(({ id, title, text, isPinned }) => (
+              <NoteCard
+                key={id}
+                id={id}
+                title={title}
+                text={text}
+                isPinned={isPinned}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
