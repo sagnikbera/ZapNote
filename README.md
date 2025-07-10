@@ -29,7 +29,7 @@
 
 ## 📁 Project Structure
 
-````bash
+```bash
 src/
 │
 ├── components/           # Reusable UI components (NoteCard, NavBar, SideBar, etc.)
@@ -41,20 +41,20 @@ src/
 └── index.js              # ReactDOM entry point
 ```
 
----
-
 ## 📦 Installation
 
 1. **Clone the repo**
+
 ```bash
    git clone https://github.com/sagnikbera/ZapNote.git
    cd ZapNote
 ```
 
 2. **Install dependencies**
+
 ```bash
 npm install
-````
+```
 
 3. **Start the app**
 
