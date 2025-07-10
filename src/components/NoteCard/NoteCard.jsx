@@ -108,12 +108,12 @@ const NoteCard = ({ id, title, text, isPinned }) => {
               )}
             </button>
           )}
-          {!isImp(important,id) && isBin(bin, id) && (
+          {!isImp(important,id) && !isInArchive(archive, id) && isBin(bin, id) && (
             <button onClick={() => onDeleteForever(id)}>
               <MdDeleteForever className="text-2xl text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400" />
             </button>
           )}
-          {!isImp(important,id) && <button onClick={() => onDeleteClick(id)}>
+          {!isImp(important,id) && !isInArchive(archive, id) &&  <button onClick={() => onDeleteClick(id)}>
             {!isBin(bin, id) && (
               <MdDeleteOutline className="text-2xl text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400" />
             )}
