@@ -39,7 +39,7 @@ src/
 ├── reducers/             # noteReducer logic for state transitions
 ├── App.jsx               # Main component with routes
 └── index.js              # ReactDOM entry point
-
+```
 
 ---
 
