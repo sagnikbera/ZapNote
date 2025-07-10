@@ -20,7 +20,7 @@ function SideBar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden sm:flex flex-col gap-3 border-r-2 w-44 h-screen p-3 pl-0">
+      <aside  className="hidden sm:flex flex-col gap-3 border-r-2 w-44 flex-shrink-0 h-screen p-3 pl-0">
         <NavLink to="/" className={navClass}>
           <FaHome />
           <span>Home</span>
@@ -40,7 +40,7 @@ function SideBar() {
       </aside>
 
       {/* Mobile Bottom Navigation */}
-      <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white border-t shadow-md flex justify-around py-2 z-50">
+      <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-yellow-200 border-t shadow-md flex justify-around py-2 z-50">
         <NavLink to="/" className={iconClass}>
           <FaHome />
         </NavLink>
